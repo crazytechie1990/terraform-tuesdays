@@ -10,6 +10,7 @@
 
 resource "azuread_application" "service_connection" {
   display_name               = local.azad_service_connection_sp_name
+  owners       = [data.azuread_client_config.current.object_id
 }
 
 resource "azuread_service_principal" "service_connection" {
